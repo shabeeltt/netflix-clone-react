@@ -1,0 +1,49 @@
+$white-color: rgb(247, 242, 242);
+$white-color-dimmed: rgb(180, 177, 177);
+$black-color: rgb(15, 15, 15);
+
+.row {
+  // margin-top: 3rem;
+  margin-left: 10px;
+  color: $white-color;
+  margin-bottom: 3rem;
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  &__posters {
+    display: flex;
+    padding: 20px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &__image {
+      max-height: 270px;
+      width: 300px;
+      border-radius: 1rem;
+      margin-right: 10px;
+      cursor: pointer;
+      outline: none;
+      transition: all 0.4s;
+
+      &:hover {
+        outline: 1px solid rgb(251, 250, 211);
+        transform: scale(1.03);
+      }
+    }
+  }
+}
+
+@media (max-width: 830px) {
+  .row {
+    margin-top: 1rem;
+    &__posters__image {
+      width: 230px;
+    }
+  }
+}

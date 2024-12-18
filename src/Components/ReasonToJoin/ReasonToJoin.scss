@@ -1,0 +1,39 @@
+$white-color: rgb(247, 242, 242);
+$white-color-dimmed: rgb(180, 177, 177);
+$black-color: rgb(15, 15, 15);
+
+h3 {
+  color: $white-color;
+  margin: 20px;
+  font-size: 2rem;
+}
+
+.reason-row {
+  margin: 20px;
+  margin-bottom: 30px;
+  font-size: 35px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+
+  &__card {
+    z-index: -1;
+
+    padding: 15px;
+    flex: 1;
+    background-color: #3d3d3d;
+    color: $white-color;
+    min-width: 300px;
+    height: 150px;
+    border-radius: 20px;
+    position: relative;
+    &-icon {
+      position: absolute;
+      right: 15px;
+      bottom: 15px;
+    }
+    &-title {
+      font-size: 1rem;
+    }
+  }
+}

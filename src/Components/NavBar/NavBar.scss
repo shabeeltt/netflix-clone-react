@@ -1,0 +1,101 @@
+$white-color: rgb(247, 242, 242);
+$white-color-dimmed: rgb(180, 177, 177);
+$black-color: rgb(15, 15, 15);
+
+.navbar {
+  z-index: 2;
+  height: 150px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.95),
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0)
+  );
+
+  &__section-1 {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__section-2 {
+    margin: 0 auto;
+    border-radius: 50px;
+    width: 28%;
+    background-color: $black-color;
+    text-align: center;
+
+    button {
+      font-size: 15px;
+      font-weight: bold;
+      margin: 10px 15px;
+      color: $white-color-dimmed;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+
+      &:hover {
+        color: $white-color;
+      }
+    }
+  }
+
+  &__logo {
+    margin: 25px 50px;
+    width: 140px;
+    cursor: pointer;
+  }
+
+  &__btn {
+    margin: 25px 50px;
+    background-color: $white-color;
+    color: $black-color;
+    border-radius: 50px;
+    width: 75px;
+    height: 32px;
+    padding: auto;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: 0.1s all ease;
+
+    &:hover {
+      background-color: $white-color-dimmed;
+    }
+  }
+}
+
+@media (max-width: 1320px) {
+  .navbar__section-2 {
+    width: 35%;
+  }
+}
+
+@media (max-width: 1140px) {
+  .navbar__section-2 {
+    width: 55%;
+  }
+}
+@media (max-width: 720px) {
+  .navbar {
+    &__logo {
+      width: 100px;
+      height: 80%;
+    }
+    &__section-2 {
+      width: 65%;
+    }
+  }
+}
+@media (max-width: 590px) {
+  .navbar__section-2 {
+    width: 85%;
+  }
+}
+@media (max-width: 435px) {
+  .navbar__section-2 {
+    width: 98%;
+  }
+}

@@ -1,0 +1,85 @@
+$white-color: rgb(247, 242, 242);
+$white-color-dimmed: rgb(180, 177, 177);
+$black-color: rgb(15, 15, 15);
+
+.banner {
+  height: 550px;
+  margin-bottom: 3rem;
+  width: 100%;
+  max-width: 100%;
+  background-size: cover;
+  background-position: center top;
+  color: $white-color;
+  position: relative;
+  z-index: 0;
+
+  .fade-bottom {
+    position: absolute;
+    bottom: 0;
+    height: 7.4rem;
+    width: 100%;
+    background-image: linear-gradient(
+      180deg,
+      transparent,
+      rgba(37, 37, 37, 0.2),
+      rgb(15, 15, 15)
+    );
+  }
+
+  &__content {
+    padding-top: 180px;
+    padding-left: 20px;
+
+    &__title {
+      font-size: 3rem;
+      font-weight: 800;
+      padding-bottom: 0.3rem;
+      letter-spacing: 2px;
+    }
+
+    &__description {
+      max-width: 500px;
+      line-height: 1.3;
+      padding-top: 1rem;
+      font-size: 1.1rem;
+    }
+
+    &__buttons {
+      button {
+        color: $white-color;
+        background-color: rgba(51, 51, 51, 0.7);
+        border: none;
+        font-weight: 600;
+        border-radius: 5px;
+        padding: 0.5rem 2rem;
+        margin-right: 1rem;
+        cursor: pointer;
+        transition: 0.1s ease all;
+
+        &:hover {
+          color: #333;
+          background-color: rgb(235, 229, 229);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 830px) {
+  .banner {
+    height: 550px;
+    object-fit: cover;
+    object-position: center;
+
+    &__content {
+      &__title {
+        font-size: 2rem;
+      }
+
+      &__description {
+        max-width: 450px;
+        font-size: 1rem;
+      }
+    }
+  }
+}
