@@ -3,16 +3,19 @@ import "./Popup.scss";
 import { X } from "lucide-react";
 import { imageUrl } from "../../Constants/Constants";
 import YouTube from "react-youtube";
+import PopupContent from "../PopupContent/PopupContent";
 
 function Popup({ setShowPopup, popupContent, setPopupContent, videoKey }) {
   const popupRef = useRef();
 
+  //closes the popup on clicking anywhere on the screen
   const closePopup = (e) => {
     if (popupRef.current === e.target) {
       setShowPopup(false);
     }
   };
 
+  //constants used for the youtube react package
   const opts = {
     height: "350",
     width: "680",
@@ -20,7 +23,6 @@ function Popup({ setShowPopup, popupContent, setPopupContent, videoKey }) {
       autoplay: 0,
     },
   };
-  console.log(popupContent);
 
   return (
     <div className="popup" ref={popupRef} onClick={closePopup}>
@@ -52,21 +54,7 @@ function Popup({ setShowPopup, popupContent, setPopupContent, videoKey }) {
               alt="Poster"
             />
           )}
-
-          <h1>{popupContent.title || popupContent.name}</h1>
-          <hr style={{ color: "#eae3e2" }} />
-          <ul>
-            <li>
-              {popupContent.release_date?.slice(0, 4) ||
-                popupContent.first_air_date?.slice(0, 4)}
-            </li>
-            <li>Type: {popupContent.media_type} </li>
-            <li>Language: {popupContent.original_language} </li>
-            <li>Rating: {popupContent.vote_average}</li>
-          </ul>
-          <hr style={{ color: "#eae3e2" }} />
-
-          <p className="popup__content-descritption">{popupContent.overview}</p>
+          <PopupContent popupContent={popupContent} />
         </div>
       </div>
     </div>

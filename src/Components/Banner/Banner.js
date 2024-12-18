@@ -35,7 +35,6 @@ function Banner() {
               movie ? imageUrl + movie.backdrop_path : ""
             })
         `,
-        // marginTop: "80px",
       }}
     >
       <div className="banner__content">

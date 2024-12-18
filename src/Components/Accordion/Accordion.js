@@ -18,6 +18,7 @@ const Accordion = ({ accordionData }) => {
         : [...prevState, newId];
     });
   };
+
   return (
     <div>
       {accordionData?.map(({ id, question, answer }) => (

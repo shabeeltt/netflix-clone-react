@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import { API_KEY } from "../../Constants/Constants";
-
 import Popup from "../Popup/Popup";
 import "./RowPost.scss";
 import axios from "../../axios";
@@ -12,6 +10,10 @@ function RowPost({ title, url }) {
   const [popupContent, setPopupContent] = useState({});
   const [videoKey, setVideoKey] = useState([]);
 
+  // Function to handle the display of the popup and fetch video details for movies or TV shows
+  // Based on the title (either "Movies" or "Shows"), it sends an API request to fetch video data for the selected item
+  // If the response contains video data, it updates the state with the video key of the second video in the results
+  // @param obj - The object representing the selected movie or TV show
   const handlerPopup = (obj) => {
     if (title === "Movies") {
       axios
@@ -19,8 +21,6 @@ function RowPost({ title, url }) {
         .then((response) => {
           if (response.data.results.length !== 0) {
             setVideoKey(response.data.results[1]);
-          } else {
-            console.log("response is empty");
           }
         });
     } else if (title === "Shows") {
@@ -29,8 +29,6 @@ function RowPost({ title, url }) {
         .then((response) => {
           if (response.data.results.length !== 0) {
             setVideoKey(response.data.results[1]);
-          } else {
-            console.log("response is empty");
           }
         });
     }
@@ -39,15 +37,11 @@ function RowPost({ title, url }) {
   };
 
   useEffect(() => {
-    axios
-
-      // .get(`trending/movie/day?api_key=${API_KEY}&language=en`)
-      // .get(`trending/tv/day?api_key=${API_KEY}&language=en`)
-      .get(url)
-      .then((respose) => {
-        setTrending(respose.data.results);
-      });
+    axios.get(url).then((respose) => {
+      setTrending(respose.data.results);
+    });
   }, [url]);
+
   return (
     <div className="container">
       {showPopup && (
