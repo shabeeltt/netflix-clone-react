@@ -45,9 +45,9 @@ const Accordion = ({ accordionData }) => {
           {selectedQuestion?.map((question_id, index) => {
             return (
               id === question_id && (
-                <h4 key={index} className="faq-answer">
+                <h5 key={index} className="faq-answer">
                   {answer}
-                </h4>
+                </h5>
               )
             );
           })}

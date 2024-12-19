@@ -21,7 +21,7 @@ $black-color: rgb(15, 15, 15);
     background-image: linear-gradient(
       180deg,
       transparent,
-      rgba(37, 37, 37, 0.2),
+      rgba(68, 68, 68, 0.2),
       rgb(15, 15, 15)
     );
   }
@@ -81,5 +81,15 @@ $black-color: rgb(15, 15, 15);
         font-size: 1rem;
       }
     }
+  }
+}
+@media (max-width: 460px) {
+  .banner__content__description {
+    width: 85%;
+  }
+}
+@media (max-width: 380px) {
+  .banner {
+    height: 500px;
   }
 }

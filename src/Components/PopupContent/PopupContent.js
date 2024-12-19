@@ -4,17 +4,23 @@ function PopupContent({ popupContent }) {
   return (
     <div>
       <h1>{popupContent.title || popupContent.name}</h1>
-      <hr style={{ color: "#eae3e2" }} />
       <ul>
         <li>
-          {popupContent.release_date?.slice(0, 4) ||
-            popupContent.first_air_date?.slice(0, 4)}
+          <p>
+            {popupContent.release_date?.slice(0, 4) ||
+              popupContent.first_air_date?.slice(0, 4)}
+          </p>
         </li>
-        <li>Type: {popupContent.media_type} </li>
-        <li>Language: {popupContent.original_language} </li>
-        <li>Rating: {popupContent.vote_average}</li>
+        <li>
+          <p>Type: {popupContent.media_type} </p>
+        </li>
+        <li>
+          <p>Language: {popupContent.original_language}</p>{" "}
+        </li>
+        <li>
+          <p>Rating: {popupContent.vote_average}</p>
+        </li>
       </ul>
-      <hr style={{ color: "#eae3e2" }} />
 
       <p className="popup__content-descritption">{popupContent.overview}</p>
     </div>

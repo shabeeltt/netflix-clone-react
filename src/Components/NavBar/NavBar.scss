@@ -12,8 +12,8 @@ $black-color: rgb(15, 15, 15);
     to bottom,
     rgba(0, 0, 0, 0.95),
     rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0)
+    rgba(44, 44, 44, 0.2),
+    rgba(49, 49, 49, 0)
   );
 
   &__section-1 {
@@ -90,6 +90,15 @@ $black-color: rgb(15, 15, 15);
   }
 }
 @media (max-width: 590px) {
+  .navbar {
+    &__btn {
+      margin: 25px 25px;
+    }
+
+    &__logo {
+      margin: 25px 25px;
+    }
+  }
   .navbar__section-2 {
     width: 85%;
   }
@@ -97,5 +106,28 @@ $black-color: rgb(15, 15, 15);
 @media (max-width: 435px) {
   .navbar__section-2 {
     width: 98%;
+  }
+}
+@media (max-width: 380px) {
+  .navbar {
+    &__logo {
+      width: 80px;
+      height: 70%;
+    }
+
+    &__btn {
+      width: 65px;
+      height: 28px;
+      font-weight: 600;
+    }
+  }
+  .navbar__section-2 {
+    width: 100%;
+
+    button {
+      font-size: 12px;
+      font-weight: bold;
+      margin: 10px 8px;
+    }
   }
 }

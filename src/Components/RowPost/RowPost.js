@@ -32,6 +32,7 @@ function RowPost({ title, url }) {
           }
         });
     }
+
     setPopupContent(obj);
     setShowPopup(true);
   };

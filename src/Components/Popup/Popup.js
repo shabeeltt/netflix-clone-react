@@ -8,19 +8,19 @@ import PopupContent from "../PopupContent/PopupContent";
 function Popup({ setShowPopup, popupContent, setPopupContent, videoKey }) {
   const popupRef = useRef();
 
-  //closes the popup on clicking anywhere on the screen
+  // Closes the popup when clicking outside the content
   const closePopup = (e) => {
     if (popupRef.current === e.target) {
       setShowPopup(false);
     }
   };
 
-  //constants used for the youtube react package
   const opts = {
-    height: "350",
-    width: "680",
+    height: "100%",
+    width: "100%",
     playerVars: {
-      autoplay: 0,
+      autoplay: 1,
+      mute: 1,
     },
   };
 
@@ -39,6 +39,7 @@ function Popup({ setShowPopup, popupContent, setPopupContent, videoKey }) {
         <div>
           {videoKey ? (
             <YouTube
+              className="trailer"
               style={{ borderRadius: "15px" }}
               videoId={videoKey}
               opts={opts}

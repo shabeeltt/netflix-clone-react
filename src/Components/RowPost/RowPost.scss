@@ -3,7 +3,6 @@ $white-color-dimmed: rgb(180, 177, 177);
 $black-color: rgb(15, 15, 15);
 
 .row {
-  // margin-top: 3rem;
   margin-left: 10px;
   color: $white-color;
   margin-bottom: 3rem;
@@ -44,6 +43,14 @@ $black-color: rgb(15, 15, 15);
     margin-top: 1rem;
     &__posters__image {
       width: 230px;
+    }
+  }
+}
+@media (max-width: 430px) {
+  .row {
+    margin-bottom: 1rem;
+    h2 {
+      font-size: 1.4rem;
     }
   }
 }

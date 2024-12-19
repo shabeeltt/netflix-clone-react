@@ -37,3 +37,23 @@ h3 {
     }
   }
 }
+
+@media (max-width: 580px) {
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 460px) {
+  h3 {
+    font-size: 1.4rem;
+  }
+  .reason-row__card {
+    height: 130px;
+    &-title {
+      font-size: 0.9rem;
+    }
+    &-icon {
+      font-size: 1.7rem;
+    }
+  }
+}
