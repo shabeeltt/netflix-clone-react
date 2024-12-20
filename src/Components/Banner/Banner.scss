@@ -90,6 +90,6 @@ $black-color: rgb(15, 15, 15);
 }
 @media (max-width: 380px) {
   .banner {
-    height: 500px;
+    max-height: 550px;
   }
 }

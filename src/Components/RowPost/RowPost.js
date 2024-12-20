@@ -15,12 +15,13 @@ function RowPost({ title, url }) {
   // If the response contains video data, it updates the state with the video key of the second video in the results
   // @param obj - The object representing the selected movie or TV show
   const handlerPopup = (obj) => {
+    console.log(obj);
     if (title === "Movies") {
       axios
         .get(`/movie/${obj.id}/videos?api_key=${API_KEY}&language=en-US`)
         .then((response) => {
           if (response.data.results.length !== 0) {
-            setVideoKey(response.data.results[1]);
+            setVideoKey(response.data.results[0]);
           }
         });
     } else if (title === "Shows") {
@@ -28,7 +29,7 @@ function RowPost({ title, url }) {
         .get(`/tv/${obj.id}/videos?api_key=${API_KEY}&language=en-US`)
         .then((response) => {
           if (response.data.results.length !== 0) {
-            setVideoKey(response.data.results[1]);
+            setVideoKey(response.data.results[0]);
           }
         });
     }
@@ -57,14 +58,16 @@ function RowPost({ title, url }) {
         <h2>{title}</h2>
         <div className="row__posters ">
           {trending.map((obj) => (
-            <img
-              title={obj.title || obj.name}
-              key={obj.id}
-              className="row__posters__image"
-              src={`${imageUrl + obj.backdrop_path}`}
-              alt="Poster"
-              onClick={() => handlerPopup(obj)}
-            />
+            <div key={obj.id ? obj.id : ""} className="cards">
+              <img
+                title={obj.title || obj.name}
+                className="row__posters__image"
+                src={`${imageUrl + obj.backdrop_path}`}
+                alt="Poster"
+                onClick={() => handlerPopup(obj)}
+              />
+              <p className="row__posters__name">{obj.title || obj.name}</p>
+            </div>
           ))}
         </div>
       </div>

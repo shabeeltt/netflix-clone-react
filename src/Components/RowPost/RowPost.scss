@@ -38,6 +38,16 @@ $black-color: rgb(15, 15, 15);
   }
 }
 
+.cards {
+  position: relative;
+
+  p {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+  }
+}
+
 @media (max-width: 830px) {
   .row {
     margin-top: 1rem;
