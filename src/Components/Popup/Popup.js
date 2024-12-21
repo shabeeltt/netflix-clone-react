@@ -5,13 +5,21 @@ import { imageUrl } from "../../Constants/Constants";
 import YouTube from "react-youtube";
 import PopupContent from "../PopupContent/PopupContent";
 
-function Popup({ setShowPopup, popupContent, setPopupContent, videoKey }) {
+function Popup({
+  setShowPopup,
+  popupContent,
+  setPopupContent,
+  videoKey,
+  setVideoKey,
+}) {
   const popupRef = useRef();
 
   // Closes the popup when clicking outside the content
   const closePopup = (e) => {
     if (popupRef.current === e.target) {
       setShowPopup(false);
+      setVideoKey([]);
+      setPopupContent({});
     }
   };
 
@@ -31,6 +39,7 @@ function Popup({ setShowPopup, popupContent, setPopupContent, videoKey }) {
           className="popup__content-close"
           onClick={() => {
             setPopupContent({});
+            setVideoKey([]);
             setShowPopup(false);
           }}
         >

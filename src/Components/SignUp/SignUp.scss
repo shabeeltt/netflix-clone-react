@@ -1,0 +1,142 @@
+$background-color: #141414;
+$text-color: #ffffff;
+$input-bg: #333333;
+$input-border: #555555;
+$button-color: #e50914;
+$button-hover: #f40612;
+$signUpImageUrl: "https://cdn.pixabay.com/photo/2022/02/20/21/18/laptop-7025342_1280.jpg";
+
+.signup-container {
+  background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.668),
+      rgba(0, 0, 0, 0.444)
+    ),
+    url($signUpImageUrl);
+  background-size: cover;
+  background-position: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: $background-color;
+  color: $text-color;
+  padding: 20px;
+}
+
+.signup-form {
+  background: $background-color;
+  border: 1px solid $input-border;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
+  width: 100%;
+  max-width: 400px;
+
+  h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+    color: $text-color;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+      font-weight: bold;
+      color: $text-color;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      background-color: $input-bg;
+      border: 1px solid $input-border;
+      border-radius: 4px;
+      font-size: 16px;
+      color: $text-color;
+
+      &:focus {
+        outline: none;
+        border-color: $button-color;
+        box-shadow: 0 0 3px rgba(229, 9, 20, 0.5);
+      }
+    }
+  }
+
+  .form-footer p {
+    margin-top: 30px;
+  }
+
+  .signin-link {
+    color: $button-color;
+    text-decoration: none;
+
+    &:hover {
+      color: $button-hover;
+    }
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: $button-color;
+    color: $text-color;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+
+    &:hover {
+      background-color: $button-hover;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .signup-container {
+    background-position: center;
+    padding: 10px;
+  }
+
+  .signup-form {
+    padding: 20px;
+    box-shadow: none;
+  }
+
+  .submit-btn {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .signup-form {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .form-group label {
+    font-size: 12px;
+  }
+
+  .form-group input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

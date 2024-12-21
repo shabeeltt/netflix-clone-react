@@ -52,6 +52,7 @@ function RowPost({ title, url }) {
           popupContent={popupContent}
           setPopupContent={setPopupContent}
           videoKey={videoKey.key}
+          setVideoKey={setVideoKey}
         />
       )}
       <div className="row">

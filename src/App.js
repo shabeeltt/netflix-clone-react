@@ -1,21 +1,22 @@
-import "./App.scss";
-import NavBar from "../src/Components/NavBar/NavBar";
-import Banner from "./Components/Banner/Banner";
-import RowPost from "./Components/RowPost/RowPost";
-import ReasonToJoin from "./Components/ReasonToJoin/ReasonToJoin";
-import Faq from "./Components/Faq/Faq";
-import { movies, shows } from "./urls";
+import SignUp from "./Components/SignUp/SignUp";
+import HomePage from "./Pages/HomePage";
+import LoginPage from "./Pages/LoginPage";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AuthContextProvidor } from "./storeContexts/AuthContext";
+import NavBar from "./Components/NavBar/NavBar";
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-      <Banner />
-      <RowPost title="Movies" url={movies} />
-      <RowPost title="Shows" url={shows} />
-      <ReasonToJoin />
-      <Faq />
-    </div>
+    <AuthContextProvidor>
+      <Router>
+        <NavBar />
+        <Routes>
+          <Route path="/" exact element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/sign-up" element={<SignUp />} />
+        </Routes>
+      </Router>
+    </AuthContextProvidor>
   );
 }
 
