@@ -73,6 +73,49 @@ $black-color: rgb(15, 15, 15);
   }
 }
 
+.account-buttons {
+  padding: 20px;
+  display: flex;
+  align-content: center;
+  gap: 10px;
+}
+
+.account-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  padding: 8px 15px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: none;
+  background-color: #e50914;
+  color: #fff;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #bc010a;
+  }
+}
+
+.logout-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  padding: 8px 15px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: none;
+  background-color: #333333;
+  color: #fff;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #4c4b4b;
+  }
+}
+
 @media (max-width: 1320px) {
   .navbar__section-2 {
     width: 35%;
@@ -88,7 +131,6 @@ $black-color: rgb(15, 15, 15);
   .navbar {
     &__logo {
       width: 100px;
-      height: 80%;
     }
     &__section-2 {
       width: 65%;
@@ -118,7 +160,6 @@ $black-color: rgb(15, 15, 15);
   .navbar {
     &__logo {
       width: 80px;
-      height: 70%;
     }
 
     &__btn {

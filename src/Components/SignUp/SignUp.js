@@ -1,8 +1,12 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./SignUp.scss";
+import { useUserAuth } from "../../storeContexts/AuthContext";
 
 function SignUp() {
+  const { signUp } = useUserAuth();
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,15 +19,33 @@ function SignUp() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData.name);
+    setError("");
+    try {
+      await signUp(formData.email, formData.password);
+      navigate("/");
+    } catch (err) {
+      setError(err.message);
+    }
   };
 
   return (
     <div className="signup-container">
       <form className="signup-form" onSubmit={handleSubmit}>
         <h2>Sign Up</h2>
+        {error && (
+          <div
+            style={{
+              border: "1px solid red",
+              padding: "10px",
+              color: "red",
+              margin: "10px 0",
+            }}
+          >
+            {error}
+          </div>
+        )}
         <div className="form-group">
           <label htmlFor="name">Name</label>
           <input

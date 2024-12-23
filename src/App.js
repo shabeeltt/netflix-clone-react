@@ -4,6 +4,7 @@ import LoginPage from "./Pages/LoginPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthContextProvidor } from "./storeContexts/AuthContext";
 import NavBar from "./Components/NavBar/NavBar";
+import ProtectedRoute from "./Components/ProtectedRoute";
 
 function App() {
   return (
@@ -11,7 +12,15 @@ function App() {
       <Router>
         <NavBar />
         <Routes>
-          <Route path="/" exact element={<HomePage />} />
+          <Route
+            path="/"
+            exact
+            element={
+              <ProtectedRoute>
+                <HomePage />
+              </ProtectedRoute>
+            }
+          />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/sign-up" element={<SignUp />} />
         </Routes>

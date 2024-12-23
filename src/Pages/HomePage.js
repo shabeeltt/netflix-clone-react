@@ -10,10 +10,10 @@ function HomePage() {
   return (
     <div className="App">
       <Banner />
-      <RowPost title="Movies" url={movies} />
-      <RowPost title="Shows" url={shows} />
-      <ReasonToJoin />
-      <Faq />
+      <RowPost id="movies" title="Movies" url={movies} />
+      <RowPost id="shows" title="Shows" url={shows} />
+      <ReasonToJoin id="reasontojoin" />
+      <Faq id="faq" />
     </div>
   );
 }

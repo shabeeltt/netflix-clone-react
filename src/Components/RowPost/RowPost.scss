@@ -7,6 +7,13 @@ $black-color: rgb(15, 15, 15);
   color: $white-color;
   margin-bottom: 3rem;
 
+  &__items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
   h2 {
     font-size: 2rem;
   }
@@ -14,8 +21,7 @@ $black-color: rgb(15, 15, 15);
   &__posters {
     display: flex;
     padding: 20px;
-    overflow-y: hidden;
-    overflow-x: scroll;
+    overflow-x: auto;
 
     &::-webkit-scrollbar {
       display: none;
@@ -38,6 +44,19 @@ $black-color: rgb(15, 15, 15);
   }
 }
 
+.slider-arrow {
+  position: absolute;
+  z-index: 2;
+  background-color: $white-color;
+  color: $black-color;
+  border-radius: 50px;
+  opacity: 0.6;
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
+}
+
 .cards {
   position: relative;
 
@@ -53,6 +72,19 @@ $black-color: rgb(15, 15, 15);
     margin-top: 1rem;
     &__posters__image {
       width: 230px;
+    }
+  }
+}
+@media (max-width: 660px) {
+  .row {
+    &__posters {
+      &__image {
+        width: 180px;
+      }
+
+      &__name {
+        font-size: 0.9rem;
+      }
     }
   }
 }

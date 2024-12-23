@@ -65,6 +65,7 @@ function Popup({
             />
           )}
           <PopupContent popupContent={popupContent} />
+          <button className="add-to-list">Add to List</button>
         </div>
       </div>
     </div>
