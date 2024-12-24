@@ -1,0 +1,28 @@
+.my-list {
+  color: white;
+  height: 70vh;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-top: 180px;
+
+  &__items {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 20px;
+  }
+}
+
+.delete-from-list {
+  z-index: 3;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+  }
+}

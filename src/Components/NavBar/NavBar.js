@@ -25,7 +25,9 @@ function NavBar() {
 
         {user?.email ? (
           <div className="account-buttons">
-            <button className="account-button">Account</button>
+            <Link to="/my-list" style={{ textDecoration: "none" }}>
+              <button className="account-button">Watch List</button>
+            </Link>
             <button className="logout-button" onClick={handleLogout}>
               Logout
             </button>
@@ -36,22 +38,6 @@ function NavBar() {
           </Link>
         )}
       </div>
-      {user?.email && (
-        <div className="navbar__section-2">
-          <a href="#movies">
-            <button>Movies</button>
-          </a>
-          <a href="#shows">
-            <button>Shows</button>
-          </a>
-          <a href="#reasontojoin">
-            <button>Reasons to Join</button>
-          </a>
-          <a href="#faq">
-            <button>FAQ</button>
-          </a>
-        </div>
-      )}
     </div>
   );
 }

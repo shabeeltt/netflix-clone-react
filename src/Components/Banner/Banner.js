@@ -5,10 +5,12 @@ import { useEffect } from "react";
 import { API_KEY, imageUrl } from "../../Constants/Constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faList } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 function Banner() {
   //state for keeping fetched movie to dispaly in the banner
   const [movie, setMovie] = useState();
+  const navigate = useNavigate();
 
   //fetches trending movie details
   useEffect(() => {
@@ -44,7 +46,7 @@ function Banner() {
             Play
             <FontAwesomeIcon icon={faPlay} style={{ padding: "0 0 0 10px" }} />
           </button>
-          <button>
+          <button onClick={() => navigate("/my-list")}>
             My List{" "}
             <FontAwesomeIcon icon={faList} style={{ padding: "0 0 0  10px" }} />
           </button>

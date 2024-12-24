@@ -1,9 +1,12 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./Popup.scss";
 import { X } from "lucide-react";
 import { imageUrl } from "../../Constants/Constants";
 import YouTube from "react-youtube";
 import PopupContent from "../PopupContent/PopupContent";
+import { useUserAuth } from "../../storeContexts/AuthContext";
+import { db } from "../../firebase/config";
+import { arrayUnion, doc, updateDoc } from "firebase/firestore";
 
 function Popup({
   setShowPopup,
@@ -13,6 +16,29 @@ function Popup({
   setVideoKey,
 }) {
   const popupRef = useRef();
+  const { user } = useUserAuth();
+
+  ///check this part
+  const [saved, setSaved] = useState(false);
+  const [addedMovie, setAddedMovie] = useState(false);
+
+  const movieId = doc(db, "users", `${user?.email}`);
+  // this too
+  const addToList = async () => {
+    if (user?.email) {
+      setAddedMovie(!addedMovie);
+      setSaved(true);
+      await updateDoc(movieId, {
+        playList: arrayUnion({
+          id: popupContent.id,
+          title: popupContent.title || popupContent.name,
+          img: popupContent.backdrop_path,
+        }),
+      });
+    } else {
+      alert("please login to save to playlist.");
+    }
+  };
 
   // Closes the popup when clicking outside the content
   const closePopup = (e) => {
@@ -65,7 +91,14 @@ function Popup({
             />
           )}
           <PopupContent popupContent={popupContent} />
-          <button className="add-to-list">Add to List</button>
+          {/* and this too  */}
+          {saved ? (
+            <button className="add-to-list">Added</button>
+          ) : (
+            <button className="add-to-list" onClick={addToList}>
+              Add to List
+            </button>
+          )}
         </div>
       </div>
     </div>

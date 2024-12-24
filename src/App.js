@@ -1,10 +1,11 @@
-import SignUp from "./Components/SignUp/SignUp";
 import HomePage from "./Pages/HomePage";
 import LoginPage from "./Pages/LoginPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthContextProvidor } from "./storeContexts/AuthContext";
 import NavBar from "./Components/NavBar/NavBar";
 import ProtectedRoute from "./Components/ProtectedRoute";
+import MyListPage from "./Pages/MyListPage";
+import SignUpPage from "./Pages/SignUpPage";
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
             }
           />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/sign-up" element={<SignUpPage />} />
+          <Route path="//my-list" element={<MyListPage />} />
         </Routes>
       </Router>
     </AuthContextProvidor>

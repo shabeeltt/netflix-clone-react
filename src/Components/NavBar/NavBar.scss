@@ -20,27 +20,6 @@ $black-color: rgb(15, 15, 15);
     display: flex;
     justify-content: space-between;
   }
-  &__section-2 {
-    margin: 0 auto;
-    border-radius: 50px;
-    width: 28%;
-    background-color: $black-color;
-    text-align: center;
-
-    button {
-      font-size: 15px;
-      font-weight: bold;
-      margin: 10px 15px;
-      color: $white-color-dimmed;
-      border: none;
-      background-color: transparent;
-      cursor: pointer;
-
-      &:hover {
-        color: $white-color;
-      }
-    }
-  }
 
   &__logo {
     margin: 25px 50px;
@@ -74,7 +53,7 @@ $black-color: rgb(15, 15, 15);
 }
 
 .account-buttons {
-  padding: 20px;
+  padding: 25px 20px;
   display: flex;
   align-content: center;
   gap: 10px;
@@ -116,25 +95,9 @@ $black-color: rgb(15, 15, 15);
   }
 }
 
-@media (max-width: 1320px) {
-  .navbar__section-2 {
-    width: 35%;
-  }
-}
-
-@media (max-width: 1140px) {
-  .navbar__section-2 {
-    width: 55%;
-  }
-}
 @media (max-width: 720px) {
-  .navbar {
-    &__logo {
-      width: 100px;
-    }
-    &__section-2 {
-      width: 65%;
-    }
+  .navbar__logo {
+    width: 100px;
   }
 }
 @media (max-width: 590px) {
@@ -147,15 +110,8 @@ $black-color: rgb(15, 15, 15);
       margin: 25px 25px;
     }
   }
-  .navbar__section-2 {
-    width: 85%;
-  }
 }
-@media (max-width: 435px) {
-  .navbar__section-2 {
-    width: 98%;
-  }
-}
+
 @media (max-width: 380px) {
   .navbar {
     &__logo {
@@ -166,15 +122,6 @@ $black-color: rgb(15, 15, 15);
       width: 65px;
       height: 28px;
       font-weight: 600;
-    }
-  }
-  .navbar__section-2 {
-    width: 100%;
-
-    button {
-      font-size: 12px;
-      font-weight: bold;
-      margin: 10px 8px;
     }
   }
 }
