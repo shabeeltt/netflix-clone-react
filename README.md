@@ -1,70 +1,146 @@
-# Getting Started with Create React App
+# Netflix Clone Application  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview  
+A responsive web application built with React, designed to replicate key features of Netflix. This project demonstrates my proficiency in front-end development, including user authentication, dynamic content loading, and API integration. The application allows users to explore trailers, view detailed movie information, and manage personalized watchlists.
 
-## Available Scripts
+While it does not support full movie streaming, it provides a seamless and engaging user experience, simulating the core functionality of Netflix.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Features  
+- User Authentication:  
+  - Sign up and log in using Firebase authentication.  
+  - User-specific data storage for personalized experience.  
+- Movie Listing:  
+  - Display a curated list of movies fetched from the TMDB API.  
+- Interactive Pop-Up:  
+  - View movie details and add movies to a personalized watchlist.  
+- Watchlist Management:  
+  - View and manage a custom watchlist with options to add or delete movies.  
+- Movie Details:  
+  - Watch trailers and view additional information about movies.  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used  
+- Frontend: React, SCSS  
+- API Integration: [TMDB API](https://developer.themoviedb.org)    
+- Backend: [Firebase](https://firebase.google.com)  (Authentication and Firestore)  
+- Environment Configuration: .env file for sensitive data  
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Screenshots  
+_Desktop View_
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Sign-Up Page
+  
+![signUp](https://github.com/user-attachments/assets/9434cb62-f8e8-4e7a-b13a-e4130c1ee3f0)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Sign-In Page
+  
+![login](https://github.com/user-attachments/assets/c155f2c5-c0b7-4999-8ca4-dffe0719f11b)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Home Page
+  
+![HomePage](https://github.com/user-attachments/assets/df2cd85c-6b07-40ab-a199-a58657f5f8d4)
 
-### `npm run eject`
+- Popup Page
+  
+![popup](https://github.com/user-attachments/assets/477bb387-926f-410d-b2c7-200191cb890d)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Watchlist Page
+  
+![watchList](https://github.com/user-attachments/assets/e8315522-79a7-489d-af7a-0b15412cbc98)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+_Mobile View_ 
 
-## Learn More
+- Sign-Up Page
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![mobilesignup](https://github.com/user-attachments/assets/14148bb6-3886-4a53-971f-40ee4b66a277)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Sign-In Page
 
-### Code Splitting
+![mobilesignin](https://github.com/user-attachments/assets/2a941ebd-8c18-43ab-be93-cac358c50f33)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Home Page
 
-### Analyzing the Bundle Size
+![mobileHomepage](https://github.com/user-attachments/assets/b8bbe3ca-96e3-4c80-a214-f9e3236c361d)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Popup Page
 
-### Making a Progressive Web App
+![mobilepopup](https://github.com/user-attachments/assets/6f9fcca5-195d-4cc7-ae76-8491cc729b35)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Watchlist Page
 
-### Advanced Configuration
+![mobilewatchlist](https://github.com/user-attachments/assets/43dfcc0f-507a-4fa1-b9e4-276e2d342243)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## Installation and Usage  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Follow these steps to set up and run the project locally:  
 
-### `npm run build` fails to minify
+### Prerequisites  
+- Ensure you have Node.js installed on your system.  
+  - [Download Node.js](https://nodejs.org/)  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Steps  
+1. Clone the Repository or Download the ZIP File  
+   - Clone the repository:  
+    ```bash
+     git clone https://github.com/shabeeltt/netflix-clone-react.git
+     cd netflix-clone-react
+    ``` 
+     
+ 
+   - Or download the ZIP file and extract it.  
+
+2. Install Dependencies  
+   ```bash  
+   npm install
+   ```
+
+
+3. Set Up Environment Variables
+
+   - Create a .env file in the project root directory.
+
+     - Add your TMDB API key:
+     ```bash
+     REACT_APP_TMDB_API_KEY=your_tmdb_api_key
+     ```
+
+     - Add your Firebase configuration:
+     ```bash
+     REACT_APP_FIREBASE_API_KEY=your_firebase_api_key  
+     REACT_APP_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain  
+     REACT_APP_FIREBASE_PROJECT_ID=your_firebase_project_id  
+     REACT_APP_FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket  
+     REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id  
+     REACT_APP_FIREBASE_APP_ID=your_firebase_app_id
+     ```
+
+4. Run the Project
+   ```bash
+   npm start
+   ```
+   - Open http://localhost:3000 in your browser to view the app.
+
+___
+### Contributions
+___
+Contributions are welcome! If you'd like to improve this project, please:
+
+- Fork the repository and make your changes.
+
+- Submit a pull request with a detailed description of your changes.
+
+- Report issues or suggest features by creating a new issue.
+
+
+Feel free to reach out if you have any questions or need support!
+
