@@ -138,6 +138,11 @@ Contributions are welcome! If you'd like to improve this project, please:
 - Fork the repository and make your changes.
 
 - Submit a pull request with a detailed description of your changes.
+___
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE.md) file for details.
+
 
 - Report issues or suggest features by creating a new issue.
 
