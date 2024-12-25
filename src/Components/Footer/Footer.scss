@@ -1,0 +1,52 @@
+.footer {
+  padding: 20px;
+  color: #fff;
+  margin-bottom: 8vh;
+
+  .country {
+    margin-top: 8vh;
+    font-weight: 200;
+    color: #fff;
+    font-size: 1rem;
+  }
+
+  .call {
+    margin-bottom: 8vh;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 480px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  .footer-link {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: underline;
+    cursor: pointer;
+    text-align: left;
+    font-size: 14px;
+
+    &:hover {
+      color: #fff;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

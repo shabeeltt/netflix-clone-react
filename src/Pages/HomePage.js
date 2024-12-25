@@ -5,6 +5,7 @@ import RowPost from "../Components/RowPost/RowPost";
 import ReasonToJoin from "../Components/ReasonToJoin/ReasonToJoin";
 import Faq from "../Components/Faq/Faq";
 import { movies, shows } from "../urls";
+import Footer from "../Components/Footer/Footer";
 
 function HomePage() {
   return (
@@ -14,6 +15,7 @@ function HomePage() {
       <RowPost id="shows" title="Shows" url={shows} />
       <ReasonToJoin id="reasontojoin" />
       <Faq id="faq" />
+      <Footer />
     </div>
   );
 }
