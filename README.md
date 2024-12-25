@@ -22,11 +22,12 @@ While it does not support full movie streaming, it provides a seamless and engag
 
 ---
 
-## Technologies Used  
-- Frontend: React, SCSS  
-- API Integration: [TMDB API](https://developer.themoviedb.org)    
-- Backend: [Firebase](https://firebase.google.com)  (Authentication and Firestore)  
-- Environment Configuration: .env file for sensitive data  
+## Technologies Used
+- Frontend: React, SCSS
+- API Integration: [TMDB API](https://developer.themoviedb.org), [Axios](https://axios-http.com)
+- Video Playback: [React YouTube](https://www.npmjs.com/package/react-youtube)
+- Backend: [Firebase](https://firebase.google.com) (Authentication and Firestore)
+- Environment Configuration: .env file for sensitive data
 
 ---
 
