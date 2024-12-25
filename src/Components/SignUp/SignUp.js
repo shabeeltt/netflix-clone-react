@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./SignUp.scss";
 import { useUserAuth } from "../../storeContexts/AuthContext";
 
 function SignUp() {
-  const { signUp } = useUserAuth();
+  const { signUp, user } = useUserAuth();
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -13,7 +13,13 @@ function SignUp() {
     password: "",
   });
 
-  // Update the corresponding state field whenever a form input value changes
+  // Redirect to home if the user is already logged in
+  useEffect(() => {
+    if (user) {
+      navigate("/", { replace: true });
+    }
+  }, [user, navigate]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -24,7 +30,7 @@ function SignUp() {
     setError("");
     try {
       await signUp(formData.email, formData.password);
-      navigate("/");
+      navigate("/login", { replace: true });
     } catch (err) {
       setError(err.message);
     }
