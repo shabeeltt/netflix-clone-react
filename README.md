@@ -142,7 +142,7 @@ Contributions are welcome! If you'd like to improve this project, please:
 ___
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE) file for details.
 
 
 - Report issues or suggest features by creating a new issue.
