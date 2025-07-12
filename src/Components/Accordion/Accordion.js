@@ -7,10 +7,6 @@ import React, { useState } from "react";
 const Accordion = ({ accordionData }) => {
   const [selectedQuestion, setSelectedQuestion] = useState([]);
 
-  // Toggles the selected state of a question in the FAQ accordion.
-  // If the question is already selected, it will be removed from the state; otherwise, it will be added.
-  // @param {number} newId - The ID of the clicked question.
-  // @return {Array} Updated state with the selected question toggled.
   const showQuestion = (newId) => {
     setSelectedQuestion((prevState) => {
       return [...prevState].includes(newId)

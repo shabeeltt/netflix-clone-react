@@ -1,8 +1,6 @@
 import SavedItems from "../SavedItems";
 import "./MyList.scss";
 
-import React from "react";
-
 const MyList = () => {
   return (
     <div className="container">
