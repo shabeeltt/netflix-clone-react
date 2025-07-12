@@ -116,6 +116,7 @@ import PopupContent from "../PopupContent/PopupContent";
 import { useUserAuth } from "../../storeContexts/AuthContext";
 import { db } from "../../firebase/config";
 import { arrayUnion, doc, getDoc, updateDoc } from "firebase/firestore";
+import { setDoc } from "firebase/firestore";
 
 function Popup({
   setShowPopup,
@@ -147,13 +148,17 @@ function Popup({
   const addToList = async () => {
     if (user?.email) {
       try {
-        await updateDoc(movieId, {
-          playList: arrayUnion({
-            id: popupContent.id,
-            title: popupContent.title || popupContent.name,
-            img: popupContent.backdrop_path,
-          }),
-        });
+        await setDoc(
+          movieId,
+          {
+            playList: arrayUnion({
+              id: popupContent.id,
+              title: popupContent.title || popupContent.name,
+              img: popupContent.backdrop_path,
+            }),
+          },
+          { merge: true }
+        );
         setSaved(true);
       } catch (err) {
         console.error("Error adding to playlist:", err);
