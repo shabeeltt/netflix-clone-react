@@ -47,13 +47,17 @@ h3 {
   h3 {
     font-size: 1.4rem;
   }
-  .reason-row__card {
-    height: 130px;
-    &-title {
-      font-size: 0.9rem;
-    }
-    &-icon {
-      font-size: 1.7rem;
+  .reason-row {
+    margin: 10px;
+
+    &__card {
+      height: 130px;
+      &-title {
+        font-size: 0.9rem;
+      }
+      &-icon {
+        font-size: 1.7rem;
+      }
     }
   }
 }

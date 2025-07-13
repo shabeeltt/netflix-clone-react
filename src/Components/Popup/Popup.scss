@@ -12,6 +12,7 @@ $black-color: rgb(15, 15, 15);
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  animation: fadeIn 0.3s ease-in-out;
 
   &__content {
     background-color: $black-color;
@@ -24,21 +25,10 @@ $black-color: rgb(15, 15, 15);
     width: 90%;
     max-width: 700px;
     max-height: 100vh;
-    overflow: hidden;
+    // overflow: hidden;
     font-size: 1rem;
     position: relative;
-
-    &-close {
-      color: white;
-      border: none;
-      cursor: pointer;
-      background-color: transparent;
-      font-size: 1.5rem;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      z-index: 20;
-    }
+    animation: popupAppear 0.3s ease-in-out;
 
     .add-to-list {
       padding: 8px 15px;
@@ -82,6 +72,35 @@ $black-color: rgb(15, 15, 15);
     }
   }
 
+  &__content-close {
+    color: white;
+    border: none;
+    cursor: pointer;
+    background-color: #ee323b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    padding: 4px;
+    font-size: 1.5rem;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    z-index: 20;
+
+    @media (max-width: 680px) {
+      top: -15px;
+      right: -15px;
+      font-size: 1.3rem;
+    }
+
+    @media (max-width: 480px) {
+      top: -12px;
+      right: -12px;
+      font-size: 1.1rem;
+    }
+  }
+
   @media (max-width: 750px) {
     .popup__content {
       padding: 1rem;
@@ -96,10 +115,6 @@ $black-color: rgb(15, 15, 15);
       &-description {
         font-size: 0.9rem;
       }
-    }
-
-    .popup__content-close {
-      font-size: 1.3rem;
     }
   }
 
@@ -117,15 +132,10 @@ $black-color: rgb(15, 15, 15);
         font-size: 0.85rem;
       }
     }
-
-    .popup__content-close {
-      font-size: 1.1rem;
-    }
   }
 
   @media (max-width: 480px) {
     .popup__content {
-      // max-height: 70vh;
       padding: 0.6rem;
       gap: 0.7rem;
 
@@ -136,10 +146,6 @@ $black-color: rgb(15, 15, 15);
       &-description {
         font-size: 0.8rem;
       }
-    }
-
-    .popup__content-close {
-      font-size: 1rem;
     }
   }
 }

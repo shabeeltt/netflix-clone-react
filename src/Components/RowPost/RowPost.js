@@ -13,11 +13,13 @@ function RowPost({ title, url }) {
   const sliderRef = useRef(null);
 
   const slideLeft = () => {
-    sliderRef.current.scrollLeft -= 900;
+    const scrollAmount = sliderRef.current.offsetWidth * 0.8;
+    sliderRef.current.scrollLeft -= scrollAmount;
   };
 
   const slideRight = () => {
-    sliderRef.current.scrollLeft += 900;
+    const scrollAmount = sliderRef.current.offsetWidth * 0.8;
+    sliderRef.current.scrollLeft += scrollAmount;
   };
 
   const handlerPopup = (obj) => {

@@ -19,7 +19,12 @@ function NavBar() {
   return (
     <div className="navbar">
       <div className="navbar__section-1">
-        <Link to="/">
+        <Link
+          to="/"
+          onClick={() => {
+            window.scrollTo(0, 0);
+          }}
+        >
           <img className="navbar__logo" src="./netflix_logo.png" alt="" />
         </Link>
 

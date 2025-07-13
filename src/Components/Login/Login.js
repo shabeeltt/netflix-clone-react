@@ -2,15 +2,17 @@ import "../SignUp/SignUp.scss";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useUserAuth } from "../../storeContexts/AuthContext";
+import { useToast } from "../../Contexts/ToastContext";
+import { ClipLoader } from "react-spinners";
 
 function Login() {
   const navigate = useNavigate();
-  const [error, setError] = useState("");
   const [formLoginData, setFormLoginData] = useState({
     email: "",
     password: "",
   });
-
+  const { showToast } = useToast();
+  const [isLogging, setIsLogging] = useState(false);
   const { signIn, user } = useUserAuth();
 
   // Redirect to home if the user is already logged in
@@ -27,12 +29,20 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
+    setIsLogging(true);
     try {
       await signIn(formLoginData.email, formLoginData.password);
-      navigate("/", { replace: true });
+
+      showToast({ type: "success", message: "Login successful" });
+
+      // Add short delay so user sees toast
+      setTimeout(() => {
+        navigate("/", { replace: true });
+      }, 1000);
     } catch (err) {
-      setError(err.message);
+      showToast({ type: "error", message: err.message });
+    } finally {
+      setIsLogging(false);
     }
   };
 
@@ -40,18 +50,7 @@ function Login() {
     <div className="signup-container">
       <form className="signup-form" onSubmit={handleSubmit}>
         <h2>Login</h2>
-        {error && (
-          <div
-            style={{
-              border: "1px solid red",
-              padding: "10px",
-              color: "red",
-              margin: "10px 0",
-            }}
-          >
-            {error}
-          </div>
-        )}
+
         <div className="form-group">
           <label htmlFor="email">Email</label>
           <input
@@ -85,7 +84,7 @@ function Login() {
         </div>
 
         <button type="submit" className="submit-btn">
-          Sign In
+          {isLogging ? <ClipLoader size="18px" color="white" /> : "Sign In"}
         </button>
       </form>
     </div>
