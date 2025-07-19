@@ -95,6 +95,67 @@ $black-color: rgb(15, 15, 15);
   }
 }
 
+.popup-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .popup-modal {
+    background-color: $black-color;
+    padding: 24px 32px;
+    border-radius: 8px;
+    max-width: 320px;
+    width: 80%;
+    color: $white-color;
+    text-align: center;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+
+    p {
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .popup-actions {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+
+      .btn {
+        flex: 1;
+        padding: 10px 0;
+        font-size: 14px;
+        font-weight: 500;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+
+        &.cancel {
+          background-color: #444;
+          color: $white-color;
+
+          &:hover {
+            background-color: #555;
+          }
+        }
+
+        &.delete {
+          background-color: #e50914;
+          color: #fff;
+
+          &:hover {
+            background-color: #b20710;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 720px) {
   .navbar__logo {
     width: 100px;

@@ -1,0 +1,153 @@
+.saved-items-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+
+  .row__posters {
+    display: flex;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .cards {
+      position: relative;
+      margin-right: 12px;
+      min-width: 180px;
+
+      .row__posters__image {
+        width: 100%;
+        max-height: 260px;
+        object-fit: cover;
+        border-radius: 6px;
+        transition: transform 0.2s ease-in-out;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+
+      .row__posters__name {
+        color: #fff;
+        text-align: center;
+        margin-top: 8px;
+        font-size: 0.9rem;
+      }
+
+      .delete-icon {
+        position: absolute;
+        top: 8px;
+        right: 10px;
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        border-radius: 50%;
+        padding: 4px;
+        cursor: pointer;
+        z-index: 2;
+
+        &:hover {
+          background: rgba(255, 0, 0, 0.8);
+        }
+      }
+    }
+  }
+
+  .slider-arrow {
+    position: absolute;
+    top: 45%;
+    z-index: 10;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &.left {
+      left: 0;
+    }
+
+    &.right {
+      right: 0;
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  .empty-message {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+
+    h3 {
+      color: #888;
+      font-size: 1.2rem;
+    }
+  }
+
+  .popup-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    .popup-modal {
+      background: #111;
+      padding: 24px 30px;
+      border-radius: 8px;
+      color: #fff;
+      max-width: 360px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+
+      p {
+        margin-bottom: 20px;
+      }
+
+      .popup-actions {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+
+        .btn {
+          width: 100%;
+          padding: 8px 16px;
+          font-size: 0.9rem;
+          border: none;
+          cursor: pointer;
+          border-radius: 4px;
+
+          &.cancel {
+            background: #444;
+            color: #ccc;
+
+            &:hover {
+              background: #555;
+            }
+          }
+
+          &.delete {
+            background: #e50914;
+            color: #fff;
+
+            &:hover {
+              background: #b20710;
+            }
+          }
+        }
+      }
+    }
+  }
+}
